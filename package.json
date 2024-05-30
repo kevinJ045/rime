@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "lint": "eslint src",
-    "test": "vitest --config vitest.config.js"
+    "test": "vitest --config vitest.config.js --exclude node_modules/**/*.spec.js"
   },
   "keywords": [],
   "author": "",
