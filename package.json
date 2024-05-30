@@ -1,0 +1,19 @@
+{
+  "name": "rime",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+		"build": "tsc --project tsconfig.json",
+		"lint": "eslint src",
+		"test": "vitest --config vitest.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.11.0"
+  }
+}
