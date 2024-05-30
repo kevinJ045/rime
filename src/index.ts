@@ -1,1 +1,3 @@
-export default { hello: "world" };
+import Renderer from "./renderer.js";
+
+export default { Renderer };
