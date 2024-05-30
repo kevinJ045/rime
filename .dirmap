@@ -1,0 +1,14 @@
+src/
+	features/
+		renderer/
+			data/
+				models/
+					render_item.model.ts
+				constant/
+					render_constants.const.ts
+			logic/
+				classes/
+					renderer.class.ts
+				functions/
+					renderer.func.ts
+	main.ts
