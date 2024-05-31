@@ -9,11 +9,11 @@ class Renderer {
 		this.height = this.getHeight();
 	}
 
-	drawBox = () => {
+	clear = () => {
 		Array(this.height)
 			.fill(0)
 			.forEach(() => {
-				process.stdout.write('#'.repeat(this.width));
+				process.stdout.write(' '.repeat(this.width));
 			});
 	};
 
