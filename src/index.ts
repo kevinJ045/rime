@@ -1,7 +1,6 @@
 import Renderer from './renderer.js';
 
 const renderer = new Renderer();
-console.log(renderer.width);
-console.log(renderer.height);
+renderer.drawBox(renderer.height);
 
 export default { Renderer };
