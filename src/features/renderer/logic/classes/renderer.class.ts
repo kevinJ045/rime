@@ -9,20 +9,20 @@ class Renderer {
 		this.height = this.getHeight();
 	}
 
-	clear = () => {
+	clear() {
 		Array(this.height)
 			.fill(0)
 			.forEach(() => {
 				process.stdout.write(' '.repeat(this.width));
 			});
-	};
+	}
 
-	getHeight = () => {
+	getHeight() {
 		return size.height;
-	};
-	getWidth = () => {
+	}
+	getWidth() {
 		return size.width;
-	};
+	}
 }
 
 export default Renderer;
