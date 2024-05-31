@@ -48,7 +48,7 @@ class Renderer {
 		for (let i = 0; i < this.height; i++) {
 			output += this.state.slice(i * this.width, (i + 1) * this.width).join('') + '\n';
 		}
-		process.stdout.write(output.trim());
+		process.stdout.write(output);
 	}
 
 	getHeight() {
