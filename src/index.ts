@@ -1,6 +1,6 @@
 import Renderer from './renderer.js';
 
 const renderer = new Renderer();
-renderer.drawBox(renderer.height);
+renderer.drawBox();
 
 export default { Renderer };
