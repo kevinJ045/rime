@@ -23,6 +23,20 @@ class Renderer {
 		}
 	}
 
+	color(color: string) {
+		switch (color) {
+			case 'red':
+				process.stdout.write('\x1b[03m');
+				break;
+			case 'blue':
+				break;
+
+			default:
+				process.stdout.write('\x1b[08m');
+				break;
+		}
+	}
+
 	write(char: string, at?: number) {
 		if (at !== undefined) {
 			this.save(char, at);
