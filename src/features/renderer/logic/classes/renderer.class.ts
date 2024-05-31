@@ -15,7 +15,7 @@ class Renderer {
 		this.state = Array<string>(this.height * this.width).fill(' ');
 	}
 
-	save(char: string, index: number = -1) {
+	save(char: string, index = -1) {
 		if (index < 0) {
 			this.state.push(char);
 		} else {
@@ -51,13 +51,13 @@ class Renderer {
 		process.stdout.write(output);
 	}
 
-	getHeight = () => {
+	getHeight() {
 		return size.height;
-	};
+	}
 
-	getWidth = () => {
+	getWidth() {
 		return size.width;
-	};
+	}
 }
 
 export default Renderer;
