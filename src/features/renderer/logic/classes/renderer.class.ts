@@ -12,7 +12,7 @@ class Renderer {
 	}
 
 	initializeState() {
-		this.state = Array(this.height * this.width).fill(' ');
+		this.state = Array<string>(this.height * this.width).fill(' ');
 	}
 
 	save(char: string, index: number = -1) {
@@ -48,7 +48,7 @@ class Renderer {
 		for (let i = 0; i < this.height; i++) {
 			output += this.state.slice(i * this.width, (i + 1) * this.width).join('') + '\n';
 		}
-		process.stdout.write(output.trim());
+		process.stdout.write(output);
 	}
 
 	getHeight = () => {
