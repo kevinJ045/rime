@@ -1,4 +1,4 @@
-import Renderer from "./renderer.js";
+import Renderer from './renderer.js';
 
 const renderer = new Renderer();
 console.log(renderer.width);

@@ -1,4 +1,4 @@
-import size from "window-size";
+import size from 'window-size';
 
 class Renderer {
 	width = 0;
