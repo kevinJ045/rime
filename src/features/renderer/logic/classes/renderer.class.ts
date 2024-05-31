@@ -44,11 +44,11 @@ class Renderer {
 
 	render() {
 		this.clear();
-		let output = '';
-		for (let i = 0; i < this.height; i++) {
-			output += this.state.slice(i * this.width, (i + 1) * this.width).join('') + '\n';
-		}
-		process.stdout.write(output);
+		process.stdout.write(
+			Array.from({ length: this.height }, (_v, i) => i)
+				.map((i) => this.state.slice(i * this.width, (i + 1) * this.width).join(''))
+				.join('\n'),
+		);
 	}
 
 	getHeight() {
