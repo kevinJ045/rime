@@ -26,13 +26,13 @@ class Renderer {
 	color(color: string) {
 		switch (color) {
 			case 'red':
-				process.stdout.write('\x1b[03m');
+				process.stdout.write('\x1b[33m');
 				break;
 			case 'blue':
 				break;
 
 			default:
-				process.stdout.write('\x1b[08m');
+				process.stdout.write('\x1b[38m');
 				break;
 		}
 	}
@@ -43,12 +43,12 @@ class Renderer {
 		} else {
 			this.save(char);
 		}
-		this.render();
+		this.update();
 	}
 
 	clearScreen() {
 		this.initializeState();
-		this.render();
+		this.update();
 	}
 
 	clear() {
@@ -65,12 +65,41 @@ class Renderer {
 		);
 	}
 
+	update(){
+		if(!this.isLoopRunning || !this.renderOnLoop) {
+			this.render();
+		}
+	}
+
 	getHeight() {
 		return size.height;
 	}
 
 	getWidth() {
 		return size.width;
+	}
+
+	private isLoopRunning = false;
+	private renderOnLoop = true;
+	mainloop(){
+		if(!this.isLoopRunning) return;
+		if(this.renderOnLoop) this.render();
+		setImmediate(() => this.mainloop());
+	}
+	startloop(){
+		this.isLoopRunning = true;
+		this.mainloop();
+	}
+	stoploop(){
+		this.isLoopRunning = false;
+	}
+	loopRender(render = true){
+		this.renderOnLoop = render;
+	}
+
+	alive(){
+		this.loopRender(false);
+		this.startloop();
 	}
 }
 

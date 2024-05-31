@@ -8,8 +8,10 @@ const writing = 'Hello';
 
 writing.split('').forEach((char, index) => {
   setTimeout(() => {
-    renderer.write(char, index + renderer.getWidth() * 2);
+    renderer.write(char, index);
   }, index * 100);
 });
+
+renderer.alive();
 
 export default { Renderer };
